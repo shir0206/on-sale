@@ -1,0 +1,203 @@
+.clock {
+  text-align: center;
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.ring {
+  background-color: orangered;
+  width: 60px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.ball-background {
+  background-color: orangered;
+  width: 8px;
+  height: 8px;
+  border-right: 6px solid orangered;
+  border-left: 6px solid orangered;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 3px;
+  /* -webkit-animation: scale-ball 5.2s linear infinite;
+  -moz-animation: scale-ball 5.2s linear infinite;
+  animation: scale-ball 5.2s linear infinite; */
+}
+
+.ball {
+  background-color: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  bottom: 3px;
+  position: absolute;
+  /* -webkit-animation: scale-ball 5.2s linear infinite;
+  -moz-animation: scale-ball 5.2s linear infinite;
+  animation: scale-ball 5.2s linear infinite; */
+  animation-name: big-ball, little-ball, tiny-ball, normal-ball;
+  animation-delay: 13000ms, 16000ms, 3300s, 36000ms;
+  animation-duration: 3000ms; /* same for all */
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19), cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.text {
+  font-family: "Montserrat semi bold", Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 12px;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  word-spacing: 100vw;
+  /* -webkit-animation: scale-text 5.2s linear infinite;
+  -moz-animation: scale-text 5.2s linear infinite;
+  animation: scale-text 5.2s linear infinite; */
+
+  animation-name: small-text, large-text, extra-large-text, medium-text;
+  animation-delay: 13000ms, 16000ms, 33000ms, 36000ms;
+  animation-duration: 3000ms; /* same for all */
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19), cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.circle {
+  background-color: orangered;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  animation-fill-mode: forwards;
+  animation-name: quater, before-quater, quater, half, before-half, half,
+    three-quater, before-three-quater, three-quater, zero, before-zero, zero;
+  animation-delay: 0ms, 3000ms, 4000ms, 5000ms, 8000ms, 9000ms, 42000ms, 45000ms,
+    46000ms, 47000ms, 50000ms, 51000ms;
+  animation-duration: 3000ms, 1000ms, 1000ms, 3000ms, 1000ms, 1000ms, 3000ms,
+    1000ms, 1000ms, 3000ms, 1000ms, 1000ms;
+
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.215, 0.61, 0.355, 1), cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    cubic-bezier(0.215, 0.61, 0.355, 1), cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19), cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.215, 0.61, 0.355, 1), cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    cubic-bezier(0.215, 0.61, 0.355, 1), cubic-bezier(0.215, 0.61, 0.355, 1),
+    cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+@keyframes half {
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes three-quater {
+  to {
+    transform: rotate(270deg);
+  }
+}
+@keyframes before-three-quater {
+  to {
+    transform: rotate(265deg);
+  }
+}
+@keyframes zero {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes before-zero {
+  to {
+    transform: rotate(355deg);
+  }
+}
+@keyframes quater {
+  to {
+    transform: rotate(90deg);
+  }
+}
+@keyframes before-quater {
+  to {
+    transform: rotate(80deg);
+  }
+}
+@keyframes before-half {
+  to {
+    transform: rotate(170deg);
+  }
+}
+
+@keyframes big-ball {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+@keyframes normal-ball {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes little-ball {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(0.75);
+  }
+}
+@keyframes tiny-ball {
+  from {
+    transform: scale(0.75);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes extra-large-text {
+  from {
+    transform: scale(1.14);
+  }
+  to {
+    transform: scale(1.18);
+  }
+}
+@keyframes large-text {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+@keyframes medium-text {
+  from {
+    transform: scale(1.18);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes small-text {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
